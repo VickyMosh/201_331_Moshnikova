@@ -1,0 +1,63 @@
+{
+    "sites": [
+        {
+            "site": "mospolytech.ru",
+            "login": "NYGgOTN430lxQzNtLAK11bTQ4A==",
+            "password": "NoOiIDV94wM="
+        },
+
+        {
+            "site": "google.com",
+            "login": "cdjyf3kLiWR3Rz4qI0O7tyM=",
+            "password": "ct/jcWEnnmhlXV8O"
+        },
+
+        {
+            "site": "gmail.com",
+            "login": "dMThcXIoj30bJA==",
+            "password": "dMThcXI7j3plI1g="
+        },
+
+        {
+            "site": "site11.ru",
+            "login": "csL0ZjFG5A==",
+            "password": "ZNDlZ3Qji2tzXSYJSg=="
+        },
+
+        {
+            "site": "site22.com",
+            "login": "csL0ZjJ54wM=",
+            "password": "dsb0ZnQy3zslGmcy"
+        },
+
+        {
+            "site": "mail.com",
+            "login": "ZNDlZ3Qji2tzXSYJSg==",
+            "password": "dMThcXIoj30bJA=="
+        },
+
+        {
+            "site": "cats.com",
+            "login": "csL0ZjBG5A==",
+            "password": "dsb0ZnQy3zslGmcy"
+        },
+
+        {
+            "site": "201-331.com",
+            "login": "ZNDlZ3Qji2tzXSYJSg==",
+            "password": "dMThcXIoj30bJA=="
+        },
+
+        {
+            "site": "goog.com",
+            "login": "cdjyf3kLiWR3Rz4qI0O7tyM=",
+            "password": "NoOiIDV94wM="
+        },
+
+        {
+            "site": "site0.com",
+            "login": "dMThcXIoj30bJA==",
+            "password": "d9DiZ3ckmQQc"
+        }
+    ]
+}

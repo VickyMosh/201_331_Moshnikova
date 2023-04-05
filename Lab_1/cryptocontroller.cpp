@@ -14,9 +14,7 @@
 #include <QJsonArray>         //для создания JSON-массива
 #include <QByteArray>         //массив байтов
 #include <QProcess>           //для запуска внешних программ и связи с ними
-
 #include <Windows.h>          //включает функции WinAPI
-
 #include <iostream>
 #include <string.h>           //для работы со строками
 

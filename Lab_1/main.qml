@@ -44,10 +44,10 @@ ApplicationWindow {
     }
 
     //функция поиска
-    function finder() {
+    function finder() {                                        //очищаем содержимое
         listmodel1.clear()
             for(var i = 0; i < listmodel2.count; ++i) {
-                if (listmodel2.get(i).site.includes(edtSearch.text)) {
+                if (listmodel2.get(i).site.includes(edtSearch.text)) {  //если содержит свойство site в listmodel2 текст, введенный в поле edtSearch. Если да, переходим к следующей строке, иначе проходим дальше.
                     listmodel1.append(listmodel2.get(i))
                 }
             }
@@ -195,8 +195,8 @@ ApplicationWindow {
                     TextField {                //поле поиска
                         id: edtSearch
                         Layout.column: 1
-                        Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-                        rightPadding: height
+                        Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter    //выравниваем TextField по верт в центре и горизонт влево
+                        rightPadding: height                                //по ширине
                         Layout.fillWidth: true
                         placeholderText: "Поиск"
 

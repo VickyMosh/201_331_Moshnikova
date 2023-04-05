@@ -1,5 +1,5 @@
 #include <QApplication>             //интерфейс
-#include <QQmlApplicationEngine>    // для движка QML
+#include <QQmlApplicationEngine>    // для движка QML (объект движка QQmlApplicationEngine обеспечивает обработку QML-файлов)
 #include <QCryptographicHash>       //для вычисления криптографических хеш-сумм.
 #include "cryptocontroller.h"
 #include <QObject>                  //для объектов Qt
@@ -7,7 +7,7 @@
 #include <Windows.h>                //включает функции WinAPI
 #include <QMessageBox>              //для работы с диалоговыми окнами
 #include <QProcess>                 //для запуска внешних программ и связи с ними ("DebugProtector.exe")
-#include <iostream> //#include <atlstr.h>               //удалить
+#include <iostream>
 
 typedef unsigned long long QWORD;
 
@@ -19,17 +19,18 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
 
-    QApplication app(argc, argv);
+    QApplication app(argc, argv);                                            //создаем объект приложения
 
-    QQmlApplicationEngine engine;                                               // создание объекта движка QML
+    QQmlApplicationEngine engine;                                            //создаем объект движка QML
 
-    QByteArray data = "ff*rt8ferg__=-*&YT";
-    data = QCryptographicHash::hash(data, QCryptographicHash::Md5);
+    QByteArray data = "ff*rt8ferg__=-*&YT";                                   //создаем массив байт и инициализируем его строкой
+    data = QCryptographicHash::hash(data, QCryptographicHash::Md5);           //вычисляем хэш-код массива байт
     qDebug() << data;
 
     //encrypt_login_or_password();
     //encrypt_db_file();
 
+    //устанавливаем соединение между объектом engine и объектом app
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
@@ -37,8 +38,8 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
 
-    cryptoController crp;
-    QQmlContext *context = engine.rootContext();
+    cryptoController crp;                                                       //создаем объект
+    QQmlContext *context = engine.rootContext();                                //получаем контекст движка QML
     context->setContextProperty("cryptoController", &crp);
 
 
@@ -62,7 +63,7 @@ int main(int argc, char *argv[])
 
     //защита от модификации (патча)
     //     чтобы определить начальный адрес, с которого приложение размещается в виртуальной памяти,
-    //     вызывается WinAPI-функция GetModuleHandle
+    //     вызывается WinAPI-функция GetModuleHandle (смещение в вирт. памяти)
         QWORD moduleBase = (QWORD)GetModuleHandle(NULL);
         QWORD text_segment_start = moduleBase + 0x1000; // сегмент .text располагается с отступом 0x1000
         qDebug() << "text_segment_start = " << Qt::hex << text_segment_start;
@@ -88,7 +89,7 @@ int main(int argc, char *argv[])
 
         bool checkresult = (current_hash_base64==hash0_base64);//проверка эталлоного хэша с фактическим
         qDebug() << "checkresult = " << checkresult;//вывод результата проверки
-//это раскомментить для проверки
+//убрать комментарии для проверки
 //        if (!checkresult){//если false, то вывод сообщения о модификации приложения
 //            int result = QMessageBox::critical(nullptr, "Внимание!", "Приложение модифицировано");
 //            return -1;

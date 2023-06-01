@@ -1,0 +1,4 @@
+﻿  Generate enclave test key
+  Системе не удается найти указанный путь.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(145,5): error MSB3073: выход из команды "if not exist "D:\LAB_3\Enclave1\Enclave1\Enclave1_private.pem" ("bin\win32\Release\ippRsaTool.exe" -genrsa "D:\LAB_3\Enclave1\Enclave1\Enclave1_private.pem")
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(145,5): error MSB3073: :VCEnd" с кодом 3.
